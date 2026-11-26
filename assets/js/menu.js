@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Scroll suave al hacer clic en el botón "INICIAR"
-    const btnIniciar = document.getElementById('btn-iniciar');
-    const seccionNiveles = document.getElementById('seccion-niveles');
 
-    btnIniciar.addEventListener('click', () => {
-        seccionNiveles.scrollIntoView({ behavior: 'smooth' });
+    //ATRAS
+    const btnAtras = document.getElementById('btn-atras');
+    btnAtras.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    const nivel_0 = document.getElementById('nivel_0');
+    nivel_0.addEventListener('click', () => {
+        window.location.href = 'nivel_0.html';
     });
 
     // 2. Interacción al hacer clic en cada nivel/personaje
@@ -27,20 +31,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cerrar modal con la X
-    btnCerrar.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
-
-    // Cerrar modal si hacen clic fuera de la cajita
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.add('hidden');
-        }
-    });
-
-    // Acción del botón dentro del modal (puedes cambiarlo luego por window.location.href = 'nivel0.html')
-    btnEntrar.addEventListener('click', () => {
-        alert(`¡Abriendo ${modalTitulo.textContent}! Aquí puedes enlazar a la siguiente página.`);
-    });
 });

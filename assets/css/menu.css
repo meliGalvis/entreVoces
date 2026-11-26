@@ -1,4 +1,4 @@
-/* VARIABLES DE COLOR BASADAS EN TU DISEÑO */
+/* VARIABLES DE COLOR */
 :root {
     --bg-cream: #fdf5ee;
     --bg-lilac: #c2a5d8;
@@ -24,84 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= SECCIÓN HERO (ARRIBA) ================= */
-.hero-section {
-    position: relative;
-    background-color: var(--bg-cream);
-    padding-top: 60px;
-    text-align: center;
-    border-bottom: 3px solid #7d6294; /* Línea divisoria del diseño */
-    overflow: hidden;
-}
-
-/* Manchas decorativas de fondo */
-.blob {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.blob-top-left {
-    width: 320px;
-    height: 220px;
-    background-color: var(--bg-lilac);
-    top: -80px;
-    left: -60px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-}
-
-.blob-yellow-left {
-    width: 350px;
-    height: 230px;
-    background-color: var(--yellow-btn);
-    top: -65px;
-    left: -40px;
-    z-index: -1;
-    border-radius: 50% 50% 60% 40%;
-}
-
-.blob-top-right {
-    width: 250px;
-    height: 250px;
-    background-color: rgba(194, 165, 216, 0.35);
-    top: -50px;
-    right: -50px;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.title-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 12px;
-}
-
-h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 700;
-    color: #141016;
-    letter-spacing: -1px;
-}
-
-.subtitle {
-    font-size: 1.15rem;
-    color: #2c2430;
-    max-width: 340px;
-    margin: 0 auto 28px auto;
-    line-height: 1.4;
-}
-
-/* Botón amarillo INICIAR */
+/* Botón (lo usa el modal) */
 .btn-primary {
     background-color: var(--yellow-btn);
     color: #1a151d;
@@ -122,25 +45,33 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Contenedor de la ilustración de los 4 chicos */
-.hero-image-container {
-    position: relative;
-    z-index: 2;
-    max-width: 960px;
-    margin: 15px auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+/* ================= BOTÓN ATRÁS ================= */
+.btn-atras {
+    position: absolute;
+    top: 38px;
+    left: 30px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: var(--lilac-box);
+    color: var(--purple-dark);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    border: 3px solid var(--lilac-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(74, 49, 94, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.hero-img {
-    width: 100%;
-    max-width: 880px;
-    height: auto;
-    display: block; /* Elimina espacio blanco debajo de la imagen */
+.btn-atras:hover {
+    background-color: var(--yellow-hover);
+    transform: translateX(-3px);
 }
 
-/* ================= SECCIÓN NIVELES (ABAJO) ================= */
+/* ================= SECCIÓN NIVELES ================= */
 .levels-section {
     background-color: var(--bg-lilac);
     padding: 50px 20px 80px 20px;
@@ -161,7 +92,6 @@ h1 {
     color: #18131b;
 }
 
-/* Estructura de filas para replicar el acomodo 4 arriba / 3 abajo */
 .nodes-grid {
     display: flex;
     flex-direction: column;
@@ -186,7 +116,6 @@ h1 {
     width: 100%;
 }
 
-/* Tarjeta de cada ilustración + píldora */
 .node-card {
     display: flex;
     flex-direction: column;
@@ -204,12 +133,11 @@ h1 {
     width: 155px;
     height: 155px;
     object-fit: contain;
-    margin-bottom: -12px; /* Hace que la píldora monte un poquito sobre la base */
+    margin-bottom: -12px;
     z-index: 2;
     filter: drop-shadow(0 6px 10px rgba(65, 41, 84, 0.15));
 }
 
-/* Etiqueta redondeada debajo de cada personaje */
 .node-pill {
     background-color: var(--lilac-pill);
     color: #2c1e38;
@@ -247,7 +175,7 @@ h1 {
     width: 100%;
     text-align: center;
     position: relative;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content h3 {

@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre voces - Menú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+<body>
+
+    <!-- Botón volver -->
+    <button id="btn-atras" class="btn-volver" aria-label="Volver al menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="20" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Volver</span>
+    </button>
+
+    <!-- SECCIÓN INFERIOR (MAPA DE NIVELES / NODOS) -->
+
+    <main class="levels-section" id="seccion-niveles">
+        <div class="container">
+            <h2 class="levels-heading">
+                Tu proceso no es lineal, recuerda que puedes iniciar<br>
+                donde desees, y trabajar a tu ritmo
+            </h2>
+
+            <!-- Cuadrícula desfasada como en el diseño -->
+            <div class="nodes-grid">
+                
+                <!-- FILA 1 (4 elementos) -->
+                <div class="nodes-row row-top">
+                    <!-- Nodo 1 -->
+                    <div class="node-card" id="nivel_0" data-titulo="Nivel 0: Apropiación" data-desc="Reconoce tu propia voz y pierde el miedo inicial en un espacio seguro.">
+                        <img src="assets/img/boton_0.png" alt="Nivel 0: Apropiación">
+                        <span class="node-pill">Nivel 0:<br>Apropiación</span>
+                    </div>
+
+                    <!-- Nodo 2 -->
+                    <div class="node-card" data-titulo="Retroalimentación" data-desc="Recibe y brinda comentarios constructivos para crecer en comunidad.">
+                        <img src="assets/img/boton_retroalimentacion.png" alt="Retroalimentación">
+                        <span class="node-pill">Retroalimentación</span>
+                    </div>
+
+                    <!-- Nodo 3 -->
+                    <div class="node-card" data-titulo="Nivel 3: Debate e intercambio de opiniones" data-desc="Participa en conversaciones activas defendiendo tus ideas con empatía.">
+                        <img src="assets/img/boton_3.png" alt="Nivel 3: Debate e intercambio de opiniones">
+                        <span class="node-pill">Nivel 3: Debate e<br>intercambio de opiniones</span>
+                    </div>
+
+                </div>
+
+                <!-- FILA 2 (3 elementos centrados) -->
+                <div class="nodes-row row-bottom">
+                    <!-- Nodo 5 -->
+                    <div class="node-card" data-titulo="Nivel 1: Expresión anónima" data-desc="Comparte tus pensamientos libremente sin mostrar tu identidad.">
+                        <img src="assets/img/boton_1.png" alt="Nivel 1: Expresión anónima">
+                        <span class="node-pill">Nivel 1: Expresión<br>anónima</span>
+                    </div>
+
+                    <!-- Nodo 6 -->
+                    <div class="node-card" data-titulo="Nivel 2: Expresión oral y escrita" data-desc="Estructura tus argumentos mediante textos cortos y notas de voz.">
+                        <img src="assets/img/boton_2.png" alt="Nivel 2: Expresión oral y escrita">
+                        <span class="node-pill">Nivel 2: Expresión<br>oral y escrita</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Enlace a tu JavaScript -->
+    <script src="assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* VARIABLES DE COLOR */
+:root {
+    --bg-cream: #fdf5ee;
+    --bg-lilac: #c2a5d8;
+    --lilac-dark: #9b7bb5;
+    --lilac-pill: #eadcf5;
+    --yellow-btn: #ffe48f;
+    --yellow-hover: #ffd866;
+    --text-dark: #1e1822;
+    --font-serif: 'Lora', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+.body-hero {
+    background-image: url('../img/portada.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ================= SECCIÓN HERO ================= */
+.hero-section {
+    position: relative;
+    padding-top: 60px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: #141016;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: #2c2430;
+    max-width: 340px;
+    margin: 0 auto 28px auto;
+    line-height: 1.4;
+}
+
+/* Botón amarillo INICIAR */
+.btn-primary {
+    background-color: var(--yellow-btn);
+    color: #1a151d;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 14px 48px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--yellow-hover);
+    transform: translateY(-2px);
+}

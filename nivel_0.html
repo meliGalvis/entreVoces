@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 0: Apropiación - Entre voces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/nivel_0.css">
+</head>
+<body>
+
+    <!-- Mancha decorativa superior izquierda -->
+    <div class="corner-blob" aria-hidden="true"></div>
+
+    <!-- Botón volver -->
+    <button id="btn-atras" class="btn-volver" aria-label="Volver al menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="20" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Volver</span>
+    </button>
+
+    <!-- ENCABEZADO -->
+    <header class="nivel-header">
+
+        <img class="deco-megafono" src="assets/img/megafono.png" alt="" aria-hidden="true">
+
+        <div class="nivel-titulo">
+            <span class="nivel-badge">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z"
+                          fill="#f7c948" stroke="#9b6bb0" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Nivel 0
+            </span>
+            <h1>Apropiación</h1>
+        </div>
+
+        <p class="nivel-descripcion">
+            En este nivel aprenderás los conceptos básicos que te ayudarán a comprender
+            la importancia de comunicarte, expresar tus ideas y escuchar a los demás.
+        </p>
+
+        <img class="deco-chica" src="assets/img/chica.png" alt="Ilustración de una chica sonriendo">
+
+    </header>
+
+    <!-- TEMAS DEL NIVEL -->
+    <main class="temas">
+        <button type="button" class="tema-card" data-modal="modal-habilidades">
+            <img src="assets/img/icono_habilidades.png" alt="">
+            <span>Habilidades<br>Comunicativas</span>
+        </button>
+
+        <button type="button" class="tema-card" data-modal="modal-teorias">
+            <img src="assets/img/icono_teorias.png" alt="">
+            <span>Teorías de la<br>comunicación</span>
+        </button>
+
+        <button type="button" class="tema-card" data-modal="modal-argumentos">
+            <img src="assets/img/icono_argumentos.png" alt="">
+            <span>Construcción<br>de Argumentos</span>
+        </button>
+    </main>
+
+    <!-- ================= MODALES ================= -->
+
+    <!-- Modal 1: Habilidades Comunicativas -->
+    <div id="modal-habilidades" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="titulo-habilidades">
+        <div class="modal-content">
+            <button type="button" class="close-btn" aria-label="Cerrar">&times;</button>
+            <h2 id="titulo-habilidades">Habilidades Comunicativas</h2>
+            <div class="modal-texto">
+                <p>Escribe aquí el texto de Habilidades Comunicativas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Teorías de la comunicación -->
+    <div id="modal-teorias" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="titulo-teorias">
+        <div class="modal-content">
+            <button type="button" class="close-btn" aria-label="Cerrar">&times;</button>
+            <h2 id="titulo-teorias">Teorías de la comunicación</h2>
+            <div class="modal-texto">
+                <p>Escribe aquí el texto de Teorías de la comunicación.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Construcción de Argumentos -->
+    <div id="modal-argumentos" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="titulo-argumentos">
+        <div class="modal-content">
+            <button type="button" class="close-btn" aria-label="Cerrar">&times;</button>
+            <h2 id="titulo-argumentos">Construcción de Argumentos</h2>
+            <div class="modal-texto">
+                <p>Escribe aquí el texto de Construcción de Argumentos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace a tu JavaScript -->
+    <script src="assets/js/nivel_0.js"></script>
+</body>
+</html>
