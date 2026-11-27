@@ -11,6 +11,26 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'nivel_0.html';
     });
 
+    const nivel_1 = document.getElementById('nivel_1');
+    nivel_1.addEventListener('click', () => {
+        window.location.href = 'nivel_1.html';
+    });
+
+    const nivel_2 = document.getElementById('nivel_2');
+    nivel_2.addEventListener('click', () => {
+        window.location.href = 'nivel_2.html';
+    });
+
+    const nivel_3 = document.getElementById('nivel_3');
+    nivel_3.addEventListener('click', () => {
+        window.location.href = 'nivel_3.html';
+    });
+
+    const retroalimentacion = document.getElementById('retroalimentacion');
+    retroalimentacion.addEventListener('click', () => {
+        window.location.href = 'retroalimentacion.html';
+    });
+
     // 2. Interacción al hacer clic en cada nivel/personaje
     const tarjetasNivel = document.querySelectorAll('.node-card');
     const modal = document.getElementById('modal-nivel');

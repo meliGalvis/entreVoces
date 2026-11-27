@@ -24,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Botón (lo usa el modal) */
 .btn-primary {
     background-color: var(--yellow-btn);
     color: #1a151d;
@@ -45,8 +44,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ================= BOTÓN ATRÁS ================= */
-.btn-atras {
+.btn-volver {
     position: absolute;
     top: 38px;
     left: 30px;
@@ -55,7 +53,7 @@ body {
     align-items: center;
     gap: 8px;
     padding: 10px 22px;
-    background-color: var(--lilac-box);
+    background-color: var(--yellow-btn);
     color: var(--purple-dark);
     font-family: var(--font-title);
     font-size: 1.05rem;
@@ -71,7 +69,6 @@ body {
     transform: translateX(-3px);
 }
 
-/* ================= SECCIÓN NIVELES ================= */
 .levels-section {
     background-color: var(--bg-lilac);
     padding: 50px 20px 80px 20px;
@@ -151,7 +148,6 @@ body {
     min-width: 140px;
 }
 
-/* ================= MODAL INTERACTIVO ================= */
 .modal {
     position: fixed;
     inset: 0;
@@ -206,4 +202,18 @@ body {
         justify-content: center;
         gap: 30px;
     }
+}
+
+.video-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 28px;
+    background-color: var(--yellow);
+    color: var(--text-dark);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }

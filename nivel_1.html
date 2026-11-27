@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 1: Expresión anónima - Entre voces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/nivel_1.css">
+</head>
+<body>
+
+    <!-- Ícono de avatar reutilizable -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="icono-avatar" viewBox="0 0 48 48">
+            <circle cx="24" cy="18" r="8" fill="currentColor"/>
+            <path d="M8 44c0-9 7-15 16-15s16 6 16 15z" fill="currentColor"/>
+        </symbol>
+    </svg>
+
+    <!-- Mancha decorativa superior derecha -->
+    <div class="corner-blob" aria-hidden="true"></div>
+
+    <!-- ENCABEZADO -->
+    <header class="nivel-header">
+        <span class="nivel-badge">
+            <img src="assets/img/megafono.png" alt="" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.5l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z"
+                      fill="#f2b705" stroke="#c98f00" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            Nivel 1
+        </span>
+
+        <h1>Expresión anónima</h1>
+
+        <p class="nivel-descripcion">
+            En este nivel, podrás dar tu opinión respetuosa de forma anónima
+            sin temor a equivocarte o ser juzgado.
+        </p>
+    </header>
+
+    <!-- ESCENA: PROPUESTA + CHAT -->
+    <main class="escena">
+
+        <!-- Columna izquierda: tema propuesto -->
+        <section class="propuesta" aria-label="Tema propuesto">
+            <div class="burbuja-tema">
+                <div class="burbuja-cabecera">
+                    <span class="avatar avatar-lila"><svg><use href="#icono-avatar"/></svg></span>
+                    <span class="autor">Anónimo 2026 propone:</span>
+                </div>
+                <p class="tema">TEMA X</p>
+            </div>
+
+            <img class="deco-chico" src="assets/img/chico.png" alt="Ilustración de un chico con laptop">
+        </section>
+
+        <!-- Columna derecha: chat -->
+        <section class="chat" aria-label="Chat anónimo">
+
+            <!-- Burbujas decorativas -->
+            <svg class="deco-burbujas" viewBox="0 0 220 150" aria-hidden="true">
+                <g stroke="#c9a227" stroke-width="2" fill="#fff6d6">
+                    <path d="M70 12c-22 0-38 14-38 32 0 10 5 19 14 25l-4 16 20-12c3 1 6 1 8 1 22 0 38-14 38-30S92 12 70 12z"/>
+                    <path d="M28 90c-18 0-30 11-30 25 0 8 4 15 11 19l-3 12 16-9c2 .5 4 .5 6 .5 18 0 30-11 30-24S46 90 28 90z" transform="translate(40 -6)"/>
+                </g>
+                <g fill="#fde7a0">
+                    <path d="M160 60c-17 0-30 11-30 25s13 25 30 25c2 0 4 0 6-.5l14 8-3-12c9-4 13-11 13-20 0-14-13-25-30-25z"/>
+                    <path d="M170 18c-14 0-25 9-25 21s11 21 25 21c2 0 3 0 5-.4l11 7-2-10c8-3 11-9 11-17 0-12-11-22-25-22z"/>
+                </g>
+                <path d="M70 52c-8-8-12-12-12-17a7 7 0 0112-4 7 7 0 0112 4c0 5-4 9-12 17z" fill="none" stroke="#c9a227" stroke-width="2" transform="translate(0 -8) scale(1)"/>
+                <path d="M72 128c-6-6-9-9-9-12a5 5 0 019-3 5 5 0 019 3c0 3-3 6-9 12z" fill="none" stroke="#c9a227" stroke-width="2" transform="translate(-4 -22)"/>
+                <g fill="#e0a98b">
+                    <circle cx="150" cy="86" r="4"/><circle cx="162" cy="86" r="4"/><circle cx="174" cy="86" r="4"/>
+                </g>
+            </svg>
+
+            <!-- Lista de mensajes -->
+            <ul id="mensajes" class="mensajes" aria-live="polite">
+                <li class="mensajes-vacio" id="mensajes-vacio">Aún no hay mensajes. ¡Sé el primero en opinar!</li>
+            </ul>
+
+            <!-- Autor del mensaje -->
+            <div class="chat-autor">
+                <span class="avatar avatar-amarillo"><svg><use href="#icono-avatar"/></svg></span>
+                <span class="autor" id="nombre-usuario">Anónimo 1020</span>
+            </div>
+
+            <!-- Caja de escritura -->
+            <form id="form-chat" class="composer" autocomplete="off">
+                <label for="input-mensaje" class="sr-only">Escribe tu opinión</label>
+                <input id="input-mensaje" type="text" maxlength="280" placeholder="Escribe tu opinión...">
+                <button type="submit" class="btn-enviar" aria-label="Enviar mensaje">
+                    <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 22L44 4 32 44 22 28z"/>
+                        <path d="M44 4L22 28"/>
+                    </svg>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Botón volver -->
+    <button id="btn-atras" class="btn-volver" aria-label="Volver al menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="20" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Volver</span>
+    </button>
+
+    <!-- Botón siguiente -->
+    <a href="nivel_2.html" id="btn-siguiente" class="btn-volver btn-siguiente">
+        <span>Siguiente</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+    </a>
+
+    <script src="assets/js/nivel_1.js"></script>
+</body>
+</html>

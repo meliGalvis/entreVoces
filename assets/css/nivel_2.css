@@ -1,0 +1,645 @@
+/* ================= VARIABLES ================= */
+:root {
+    --bg-cream: #fdf3dc;
+    --purple: #8c5aa6;
+    --purple-mid: #9b7bb5;
+    --purple-dark: #5e3a78;
+    --lilac-box: #eadcf5;
+    --lilac-border: #b98fd1;
+    --yellow: #fed87f;
+    --ink: #111;
+    --font-title: 'Bree Serif', Georgia, serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ================= DECORACIÓN ================= */
+.deco-salpicaduras {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    width: 110px;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blob-inferior {
+    position: absolute;
+    right: -70px;
+    bottom: -50px;
+    width: 400px;
+    height: 240px;
+    background-color: var(--purple-mid);
+    border-radius: 65% 35% 0 0 / 80% 70% 0 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blob-inferior::before {
+    content: "";
+    position: absolute;
+    right: 50px;
+    top: -26px;
+    width: 220px;
+    height: 120px;
+    background-color: #c2a5d8;
+    border-radius: 70% 30% 0 0 / 90% 80% 0 0;
+    opacity: 0.8;
+}
+
+/* ================= ENCABEZADO ================= */
+.nivel-header {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px 0;
+    text-align: center;
+}
+
+.nivel-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    padding: 6px 18px 6px 62px;
+    float: left;
+    background-color: var(--lilac-box);
+    color: var(--purple-dark);
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    border: 2px solid var(--lilac-border);
+    border-radius: 22px;
+    box-shadow: 0 3px 8px rgba(74, 49, 94, 0.2);
+}
+
+.nivel-badge img {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 52px;
+    height: auto;
+    transform: translateY(-54%);
+}
+
+h1 {
+    clear: both;
+    margin-top: 2px;
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 6vw, 3.9rem);
+    line-height: 1.1;
+    color: var(--purple);
+}
+
+.nivel-descripcion {
+    display: inline-block;
+    max-width: 760px;
+    margin-top: 6px;
+    padding: 8px 18px;
+    background-color: var(--yellow);
+    border-radius: 16px;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.45;
+    text-align: justify;
+}
+
+/* ================= ESCENA ================= */
+.escena {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 18px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ---------- Fila superior ---------- */
+.fila-media {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.chica-wrap {
+    position: relative;
+    justify-self: start;
+}
+
+.deco-chica {
+    display: block;
+    height: 190px;
+    width: auto;
+}
+
+.deco-burbuja {
+    position: absolute;
+    top: 6px;
+    right: -70px;
+    width: 64px;
+    height: auto;
+}
+
+/* Burbuja del tema */
+.burbuja-tema {
+    position: relative;
+    max-width: 380px;
+    padding: 12px 20px 14px;
+    background-color: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 4px 5px 0 var(--ink);
+    justify-self: center;
+}
+
+.burbuja-tema::before,
+.burbuja-tema::after {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.burbuja-tema::before {
+    right: 38px;
+    bottom: -48px;
+    width: 40px;
+    height: 50px;
+    background-color: var(--ink);
+}
+
+.burbuja-tema::after {
+    right: 42px;
+    bottom: -40px;
+    width: 32px;
+    height: 44px;
+    background-color: #fff;
+}
+
+.burbuja-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tema {
+    margin-top: 4px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1rem;
+}
+
+.nota {
+    justify-self: end;
+    max-width: 190px;
+    padding: 8px 12px;
+    background-color: var(--lilac-box);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* ---------- Avatares ---------- */
+.avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.avatar svg {
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-amarillo {
+    color: #f2b705;
+    border: 2px solid #f2b705;
+}
+
+.avatar-morado {
+    color: var(--purple);
+    border: 2px solid var(--purple);
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.autor {
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+}
+
+.autor-sm {
+    font-size: 0.75rem;
+}
+
+/* ---------- Fila inferior ---------- */
+.fila-chat {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.chat-autor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 6px 14px;
+}
+
+/* ---------- Caja de escritura ---------- */
+.composer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 66px;
+    padding: 12px 22px;
+    background-color: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 50px;
+    box-shadow: 4px 6px 0 var(--ink);
+}
+
+.composer:focus-within {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 3px;
+}
+
+.composer input {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 2px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.composer input::placeholder {
+    color: #8a8a8a;
+}
+
+.btn-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: var(--ink);
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-icono:hover {
+    color: var(--purple);
+}
+
+.btn-enviar:hover {
+    transform: translate(3px, -3px);
+}
+
+.btn-icono:focus-visible {
+    outline: 3px solid var(--purple-dark);
+}
+
+/* Modo grabando */
+.grabando {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.punto-rec {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    background-color: #e5262b;
+    border-radius: 50%;
+    animation: latido 1s ease-in-out infinite;
+}
+
+.tiempo-rec {
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    min-width: 2.6em;
+}
+
+.grabando-texto {
+    flex: 1;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.estado {
+    min-height: 1.2em;
+    margin: 8px 0 0 14px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #a3262a;
+}
+
+/* ---------- Mensajes ---------- */
+.mensajes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 220px;
+    padding: 2px 6px 4px 0;
+    overflow-y: auto;
+}
+
+.mensajes-vacio {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--purple-dark);
+}
+
+.mensaje {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    animation: aparecer 0.25s ease;
+}
+
+.mensaje-cuerpo {
+    min-width: 0;
+}
+
+.mensaje-cuerpo .autor-sm {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.mensaje-texto {
+    display: inline-block;
+    max-width: 100%;
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Nota de voz ---------- */
+.audio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    padding: 6px 16px 6px 8px;
+    background-color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 30px;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.audio-play {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.audio-play svg {
+    width: 100%;
+    height: 100%;
+}
+
+.audio-play:hover {
+    background-color: var(--lilac-box);
+}
+
+.audio-play:focus-visible {
+    outline: 3px solid var(--purple-dark);
+}
+
+.audio-barras {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 36px;
+    min-width: 0;
+}
+
+.audio-barras span {
+    display: block;
+    width: 3px;
+    min-height: 3px;
+    background-color: var(--ink);
+    border-radius: 2px;
+    transition: background-color 0.15s ease;
+}
+
+.audio-barras span.reproducida {
+    background-color: var(--purple);
+}
+
+.audio-tiempo {
+    min-width: 2.4em;
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes latido {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.45; transform: scale(0.8); }
+}
+
+/* ================= BOTÓN VOLVER ================= */
+.btn-volver {
+    position: fixed;
+    left: 28px;
+    bottom: 28px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: var(--lilac-box);
+    color: var(--purple-dark);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    border: 3px solid var(--lilac-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(74, 49, 94, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-volver:hover {
+    background-color: #ead2f5;
+    transform: translateX(-3px);
+}
+
+.btn-volver:focus-visible {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 3px;
+}
+
+/* ================= AJUSTE A LA PANTALLA (computador) ================= */
+@media (min-width: 851px) and (min-height: 601px) {
+    body {
+        height: 100dvh;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .nivel-header {
+        flex-shrink: 0;
+        padding-top: 2.5vh;
+    }
+
+    h1 {
+        font-size: clamp(1.9rem, 7vh, 3.9rem);
+    }
+
+    .nivel-descripcion {
+        font-size: clamp(0.85rem, 2.1vh, 1rem);
+    }
+
+    .escena {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        margin-top: 1vh;
+        padding-bottom: 9vh;
+        justify-content: space-evenly;
+        gap: 2vh;
+    }
+
+    .deco-chica {
+        height: clamp(110px, 26vh, 200px);
+    }
+
+    .mensajes {
+        max-height: 22vh;
+    }
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 850px) {
+    .deco-salpicaduras {
+        width: 70px;
+        right: 10px;
+    }
+
+    .fila-media,
+    .fila-chat {
+        grid-template-columns: 1fr;
+    }
+
+    .chica-wrap,
+    .burbuja-tema,
+    .nota {
+        justify-self: center;
+    }
+
+    .deco-chica {
+        height: 150px;
+    }
+
+    .deco-burbuja {
+        right: -56px;
+        width: 52px;
+    }
+
+    .burbuja-tema {
+        margin-bottom: 40px;
+    }
+
+    .blob-inferior {
+        width: 260px;
+        height: 170px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mensaje,
+    .punto-rec {
+        animation: none;
+    }
+}
+
+.btn-siguiente {
+    left: auto;
+    right: 30px;
+    top: auto;
+    bottom: 30px;
+    text-decoration: none;
+}
+
+.btn-siguiente:hover {
+    transform: translateX(3px);
+}

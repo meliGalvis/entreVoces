@@ -1,0 +1,268 @@
+/* ================= VARIABLES ================= */
+:root {
+    --bg-cream: #fff1d0;
+    --purple: #8c5aa6;
+    --purple-mid: #c2a5d8;
+    --purple-dark: #5e3a78;
+    --lilac-box: #ecd9f5;
+    --lilac-border: #b98fd1;
+    --ink: #1a1a1a;
+    --font-title: 'Bree Serif', Georgia, serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 90px;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+.franja-superior {
+    height: 10px;
+    background-color: var(--purple-mid);
+}
+
+/* ================= ESCENA ================= */
+.escena {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 36px 24px 0;
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 40px;
+}
+
+/* ================= COLUMNA IZQUIERDA ================= */
+.columna-izq {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.badge-retro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 22px 34px 22px 112px;
+    background: linear-gradient(180deg, #ecd5f7 0%, #cfa8e6 100%);
+    border: 3px solid var(--lilac-border);
+    border-radius: 60px;
+    box-shadow: 0 5px 12px rgba(74, 49, 94, 0.25);
+}
+
+.badge-pulgar {
+    position: absolute;
+    left: 14px;
+    bottom: 6px;
+    width: 76px;
+    height: auto;
+}
+
+.badge-retro h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--purple-dark);
+}
+
+.badge-destellos {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 22px;
+    height: auto;
+    transform: translateY(-50%);
+}
+
+.deco-chica {
+    display: block;
+    width: 270px;
+    max-width: 100%;
+    height: auto;
+    margin-left: -20px;
+}
+
+/* ================= COLUMNA DERECHA ================= */
+.columna-der {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ---------- Tarjeta de resultados ---------- */
+.tarjeta-resultados {
+    position: relative;
+    margin-top: 14px;
+    padding: 46px 26px 22px;
+    border: 1.5px solid var(--ink);
+    border-radius: 20px;
+}
+
+.tarjeta-titulo {
+    position: absolute;
+    top: -14px;
+    left: 14px;
+    max-width: 62%;
+    padding: 4px 10px;
+    background-color: var(--bg-cream);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.deco-copa {
+    position: absolute;
+    top: -34px;
+    right: 10px;
+    width: 72px;
+    height: auto;
+}
+
+.dato {
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.dato span {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+}
+
+/* ---------- Recomendaciones ---------- */
+.recomienda {
+    align-self: flex-start;
+    padding: 6px 14px;
+    background-color: var(--lilac-box);
+    border-radius: 14px;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.caja-recomendaciones {
+    min-height: 130px;
+    padding: 16px 20px;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ================= BOTÓN VOLVER ================= */
+.btn-volver {
+    position: fixed;
+    left: 28px;
+    bottom: 28px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: var(--lilac-box);
+    color: var(--purple-dark);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    border: 3px solid var(--lilac-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(74, 49, 94, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-volver:hover {
+    background-color: #ead2f5;
+    transform: translateX(-3px);
+}
+
+.btn-volver:focus-visible {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 3px;
+}
+
+/* ================= AJUSTE A LA PANTALLA (computador) ================= */
+@media (min-width: 851px) and (min-height: 601px) {
+    body {
+        height: 100dvh;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .escena {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        padding-top: 4vh;
+        padding-bottom: 8vh;
+    }
+
+    .deco-chica {
+        width: auto;
+        height: clamp(150px, 38vh, 300px);
+    }
+
+    .caja-recomendaciones {
+        min-height: 0;
+        flex: 1;
+        overflow-y: auto;
+    }
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 850px) {
+    .escena {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-top: 50px;
+    }
+
+    .columna-izq {
+        align-items: center;
+    }
+
+    .badge-retro {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .deco-chica {
+        width: 200px;
+        margin: 0;
+    }
+
+    .tarjeta-titulo {
+        max-width: 70%;
+        font-size: 1rem;
+    }
+}
+
+.btn-siguiente {
+    left: auto;
+    right: 30px;
+    top: auto;
+    bottom: 30px;
+    text-decoration: none;
+}
+
+.btn-siguiente:hover {
+    transform: translateX(3px);
+}

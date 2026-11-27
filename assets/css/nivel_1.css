@@ -1,0 +1,430 @@
+/* ================= VARIABLES ================= */
+:root {
+    --bg-purple: #bf9bcc;
+    --purple-shadow: #8f6199;
+    --purple-dark: #5e3a78;
+    --lilac-box: #f3e1fa;
+    --lilac-border: #b98fd1;
+    --yellow: #fed87f;
+    --yellow-soft: #fff0b8;
+    --ink: #111;
+    --font-title: 'Bree Serif', Georgia, serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 110px;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--bg-purple);
+    overflow-x: hidden;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ================= MANCHA SUPERIOR DERECHA ================= */
+.corner-blob {
+    position: absolute;
+    top: -110px;
+    right: -90px;
+    width: 440px;
+    height: 330px;
+    background-color: var(--yellow);
+    border-radius: 55% 0 50% 70% / 60% 0 55% 55%;
+    filter: drop-shadow(-12px 14px 0 var(--purple-shadow));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ================= ENCABEZADO ================= */
+.nivel-header {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 46px 24px 0;
+}
+
+.nivel-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 6px;
+    padding: 7px 18px 7px 62px;
+    background-color: var(--yellow-soft);
+    color: #8a6500;
+    font-family: var(--font-title);
+    font-size: 1rem;
+    border: 2px solid #e8d58c;
+    border-radius: 22px;
+    box-shadow: 0 3px 8px rgba(74, 49, 94, 0.2);
+}
+
+.nivel-badge img {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 56px;
+    height: auto;
+    transform: translateY(-50%);
+}
+
+h1 {
+    margin-top: 10px;
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 1.1;
+    color: #000;
+}
+
+.nivel-descripcion {
+    display: inline-block;
+    max-width: 570px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--yellow);
+    border-radius: 16px;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.45;
+}
+
+/* ================= ESCENA ================= */
+.escena {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* ---------- Avatares ---------- */
+.avatar {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar svg {
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-lila {
+    background-color: #fff;
+    color: var(--bg-purple);
+    border: 2px solid var(--bg-purple);
+}
+
+.avatar-amarillo {
+    background-color: var(--yellow-soft);
+    color: var(--yellow);
+    border: 2px solid #e8c660;
+}
+
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+}
+
+.autor {
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+}
+
+/* ---------- Tema propuesto ---------- */
+.propuesta {
+    position: relative;
+    padding-top: 40px;
+}
+
+.burbuja-tema {
+    position: relative;
+    max-width: 380px;
+    padding: 14px 20px 18px;
+    background-color: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 4px 5px 0 var(--ink);
+}
+
+/* Cola de la burbuja */
+.burbuja-tema::before,
+.burbuja-tema::after {
+    content: "";
+    position: absolute;
+    left: 62%;
+    clip-path: polygon(0 0, 100% 0, 70% 100%);
+}
+
+.burbuja-tema::before {
+    bottom: -52px;
+    width: 46px;
+    height: 54px;
+    background-color: var(--ink);
+}
+
+.burbuja-tema::after {
+    bottom: -44px;
+    left: calc(62% + 4px);
+    width: 36px;
+    height: 48px;
+    background-color: #fff;
+}
+
+.burbuja-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tema {
+    margin-top: 6px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1rem;
+}
+
+.deco-chico {
+    display: block;
+    width: 210px;
+    height: auto;
+    margin: 36px 0 0 30px;
+}
+
+/* ---------- Chat ---------- */
+.chat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+}
+
+.deco-burbujas {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    width: 220px;
+    height: auto;
+    pointer-events: none;
+}
+
+.mensajes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 260px;
+    margin-bottom: 14px;
+    padding: 4px 6px 4px 0;
+    overflow-y: auto;
+}
+
+.mensajes-vacio {
+    align-self: flex-start;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--purple-dark);
+}
+
+.mensaje {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    animation: aparecer 0.25s ease;
+}
+
+.autor-sm {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.8rem;
+}
+
+.mensaje-texto {
+    display: inline-block;
+    max-width: 100%;
+    padding: 9px 16px;
+    background-color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.chat-autor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 8px 10px;
+}
+
+/* ---------- Caja de escritura ---------- */
+.composer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 26px;
+    background-color: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 50px;
+    box-shadow: 5px 7px 0 var(--ink);
+}
+
+.composer input {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 2px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--ink);
+}
+
+.composer input::placeholder {
+    color: #8a8a8a;
+}
+
+.composer:focus-within {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 3px;
+}
+
+.btn-enviar {
+    display: inline-flex;
+    padding: 4px;
+    background: none;
+    border: none;
+    color: var(--ink);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+    transform: translate(3px, -3px);
+}
+
+.btn-enviar:focus-visible {
+    outline: 3px solid var(--purple-dark);
+    border-radius: 8px;
+}
+
+/* ================= BOTÓN VOLVER ================= */
+.btn-volver {
+    position: fixed;
+    left: 28px;
+    bottom: 28px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: var(--lilac-box);
+    color: var(--purple-dark);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    border: 3px solid var(--lilac-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(74, 49, 94, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-volver:hover {
+    background-color: #ead2f5;
+    transform: translateX(-3px);
+}
+
+.btn-volver:focus-visible {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 3px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 850px) {
+    .corner-blob {
+        width: 300px;
+        height: 230px;
+        top: -90px;
+        right: -80px;
+    }
+
+    .escena {
+        grid-template-columns: 1fr;
+    }
+
+    .propuesta {
+        padding-top: 20px;
+    }
+
+    .burbuja-tema {
+        max-width: 100%;
+    }
+
+    .deco-chico {
+        width: 150px;
+        margin: 60px 0 0 20px;
+    }
+
+    .chat {
+        padding-top: 120px;
+    }
+
+    .deco-burbujas {
+        right: 10px;
+        width: 170px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mensaje {
+        animation: none;
+    }
+}
+
+.btn-siguiente {
+    left: auto;
+    right: 30px;
+    top: auto;
+    bottom: 30px;
+    text-decoration: none;
+}
+
+.btn-siguiente:hover {
+    transform: translateX(3px);
+}
